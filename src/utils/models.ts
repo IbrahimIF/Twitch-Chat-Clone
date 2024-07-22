@@ -1,3 +1,5 @@
+// Defining the structure of a chat message.
+
 export interface MessageModel {
     id: string
     author: Author

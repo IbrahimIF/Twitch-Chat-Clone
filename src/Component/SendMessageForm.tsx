@@ -1,10 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const SendMessageForm = () => {
+type SendMessageFormProps = { onSend: (message: string) => void className?: string }
+const SendMessageForm = ({onSend, className}: SendMessageFormProps) => {
+  const [message, setMessage] = useState('')
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const filteredMessage = message.trim().slice(0, MAX_MESSAGE_LENGTH)
+
+    if (filteredMessage){
+      onSend(filteredMessage)
+    }
+
+    setMessage('')
+  }
+
   return (
-    <form>
+    <form className={className} onSubmit={handleSubmit}>
         <input
         type="text"
+        onChange={(e) => setMessage(e.target.value)}
         className="w-full p-2 rounded bg-slate-700 focus:outline-none focus:ring-purple-500
         focus:ring-2"
         placeholder="Send a chat message"
