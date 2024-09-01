@@ -1,30 +1,37 @@
-# React + TypeScript + Vite
+![image](https://github.com/user-attachments/assets/fc0a4e5c-da04-44a0-a67b-0d624ff085ef)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Project Status](https://img.shields.io/badge/status-paused-grey)
 
-Currently, two official plugins are available:
+![Static Badge](https://img.shields.io/badge/made_with-React_+_Vite-blue)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project showcases a recreation of the twitch chat followed from a tutorial 
+originally made by @code-with-gionatha. this project also includes hidden secrets and additions to said tutorial.
 
-## Expanding the ESLint configuration
+----
+## Getting started:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To run this project locally, you'll need to have Node.js and npm installed on your computer. Once you have these installed, follow these steps:
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone this repository to your local machine.
+2. Navigate to the project directory using the command line.
+3. Run npm install to install all dependencies.
+4. Run npm run dev to start the Vite development server.
+5. Open your web browser and navigate to http://localhost:5173 (or the port shown in the terminal) to see the website.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+-----
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Features:
+- 
+
+---
+## Technologies and Tools Utilised:
+
+[![My Skills](https://skillicons.dev/icons?i=react,vite,ts,js,css,vscode,tailwind&perline=1)](https://skillicons.dev)
+
+-----
+## Acknowledgment:
+- [Build a twitch chat clone](https://www.youtube.com/watch?v=U2XnoKzxmeY)
+- [Socket.io](https://socket.io/)
+
+
+---
