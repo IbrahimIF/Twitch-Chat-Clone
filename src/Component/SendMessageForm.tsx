@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 
-type SendMessageFormProps = { onSend: (message: string) => void className?: string }
+type SendMessageFormProps = { onSend: (message: string) => void 
+  className?: string }
+
+  const MAX_MESSAGE_LENGTH = 300
+  
 const SendMessageForm = ({onSend, className}: SendMessageFormProps) => {
   const [message, setMessage] = useState('')
 

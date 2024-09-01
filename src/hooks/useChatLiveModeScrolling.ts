@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useRef, useState} from 'react'
-import { MessageModel } from '../utils/models'
+import { useCallback, useEffect, useRef, useState} from 'react';
+import { MessageModel } from '../utils/models';
 export default function useChatLiveModeScrolling<T extends HTMLElement>(
     messages: MessageModel[]
 ) {

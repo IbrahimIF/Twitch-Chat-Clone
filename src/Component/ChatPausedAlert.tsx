@@ -1,8 +1,15 @@
-import { useState } from 'react'
-import { GiPauseButton } from 'react-icons/gi'
-import { ImArrowDown2 } from 'react-icons/im'
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { useState } from 'react';
+import { GiPauseButton } from 'react-icons/gi';
+import { ImArrowDown2 } from 'react-icons/im';
 
-const ChatPausedAlert = () => ({ onClick: handleClick, className,}: { onClick: () => void className?: string }) => {
+const ChatPausedAlert = ({
+    onClick: handleClick,
+    className,
+}: {
+    onClick: () => void
+    className?: string
+}) => {
     const [isHovered, setIsHovered] = useState(false)
 
     const label = isHovered ? (

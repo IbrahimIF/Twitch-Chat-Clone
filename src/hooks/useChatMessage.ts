@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react"; 
 import { MessageModel } from '../utils/models'; // Defining the structure of a chat message.
-import useChatConnection from './useChatConnect' // custom hook used for managing websocket connections
+import useChatConnection from './useChatConnect'; // custom hook used for managing websocket connections
 
 
 const MESSAGE_WINDOW = 30 // defines the number of messages to keep in the chat window
@@ -12,7 +12,8 @@ const welcomeMessage: MessageModel = {
         rgbColor: 'darkorchid',
         badges: ['moderator'],
         username: 'Welcome to Twitch Chat Clone!',
-    }
+    },
+    content: 'Welcome to Twitch Chat Clone!',
 }
 
 
