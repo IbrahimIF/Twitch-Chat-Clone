@@ -8,7 +8,7 @@ import ChatPausedAlert from './ChatPausedAlert'
 
 const Chat = () => {
   const {messages, send} = useChatMessages()
-  const {chatMessagesBoxRef, isLiveModeEnabled } = useChatLiveModeScrolling<HTMLDivElement>(messages)
+  const {chatMessagesBoxRef, isLiveModeEnabled, scrollNewMessages } = useChatLiveModeScrolling<HTMLDivElement>(messages)
   return (
     <div className="w-full max-w-[550px] px-4 py-3 rounded-lg bg-slate-900 opacity-80 ">
         <ChatMessagesBox ref={chatMessagesBoxRef} messages={messages} />

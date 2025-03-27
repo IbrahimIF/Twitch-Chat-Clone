@@ -3,6 +3,7 @@ import {io, Socket} from 'socket.io-client';
 
 const ENDPOINT = import.meta.env.VITE_SOCKET_ENDPOINT
 
+
 const connect = () => {
     return io(ENDPOINT, {
         reconnectionAttempts: 5,
