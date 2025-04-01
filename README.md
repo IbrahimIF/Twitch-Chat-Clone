@@ -22,7 +22,7 @@ To run this project locally, you'll need to have Node.js and npm installed on yo
 -----
 
 ## Features:
-- **Sending & Real-time message display**: Users can send Messages, Messages would appear instantly in the chat window.
+- **Sending & Receiving Real-time message display**: Users can send Messages, Messages would appear instantly in the chat window.
 - **User accounts**: Guest/anonymous chat mode & Optional user accounts with usernames.
 - **Emote**: Basic emoji support.
 - **Message history**: Users can do limited scrollback or Auto-scroll to the newest message .
