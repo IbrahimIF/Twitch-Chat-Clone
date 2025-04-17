@@ -19,7 +19,7 @@ const welcomeMessage: MessageModel = {
 
 export default function useChatMessages() {
     // intialises the welcome message and the following messages entered
-    const [messages, setMessages] = useState<MessageModel[]>( [])
+    const [messages, setMessages] = useState<MessageModel[]>( [welcomeMessage])
     const socket = useChatConnection()
     
     // adds new messages to the messages state

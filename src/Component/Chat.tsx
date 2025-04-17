@@ -15,8 +15,7 @@ const Chat = () => {
         {!isLiveModeEnabled && (
           <ChatPausedAlert 
           onClick={scrollNewMessages}
-          className="absolute inset-x-0 bottom-28 mx-auto"
-          />
+          className="absolute inset-x-0 bottom-28 mx-auto"/>
         )}
         <SendMessageForm onSend={send} className="mt-4"/>
     </div>
@@ -26,7 +25,6 @@ const Chat = () => {
 const ChatMessagesBox = React.forwardRef<HTMLDivElement, {messages: MessageModel[]}> (({messages}, ref) => {
   const MessageList = messages.map((message) => (
     <ChatMessage key={message.id} className="mb-1" message={message} />
-
   ))
     return <div ref={ref} className="h-[70vh] overflow-auto">{MessageList}</div>
 })

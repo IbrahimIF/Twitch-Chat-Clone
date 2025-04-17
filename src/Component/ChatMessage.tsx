@@ -9,7 +9,7 @@ const ChatMessage = ({
     message: { author, content }, 
     className, 
 }: MessageProps) => {
-    const Badges = author.badges.map((bg, i) => (
+    const Badges = author.badges?.map((bg, i) => (
         <img
             key={i}
             src={`/badges/${bg}.png`}
@@ -24,9 +24,8 @@ const ChatMessage = ({
     )
 
 
-
     return (
-        <div className={'text-[15px] py-1 px-2 rounded hover:bg-gray-500/30 leading-6 ${className}'}>
+        <div className={`text-[15px] py-1 px-2 rounded hover:bg-gray-500/30 leading-6 ${className}`}>
         <div className="inline-flex items-baseline">
             {Badges}
             {Author}
