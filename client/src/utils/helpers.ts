@@ -1,3 +1,4 @@
+/*
 import { faker } from '@faker-js/faker';
 import { Badge, MessageModel } from './models';
 
@@ -29,3 +30,5 @@ const generateRandomBadges = (): Badge[] => {
         badge('turbo', 0.1),
     ].filter((x) => x !== undefined) as Badge[];
 };
+
+*/

@@ -5,7 +5,7 @@ import { ImArrowDown2 } from 'react-icons/im';
 
 const ChatPausedAlert = ({
     onClick: handleClick,
-    className,
+    //className,
 }: {
     onClick: () => void
     className?: string
