@@ -10,6 +10,7 @@ export default function useChatConnection() {
       const socketIo = io(ENDPOINT, {
         reconnection: true,
         reconnectionAttempts: 5,
+        transports: ['websocket'],
         withCredentials: false
       });
   
