@@ -24,6 +24,7 @@ const SendMessageForm = ({onSend, className}: SendMessageFormProps) => {
     <form className={className} onSubmit={handleSubmit}>
         <input
         type="text"
+        value={message}
         onChange={(e) => setMessage(e.target.value)}
         className="w-full p-2 rounded bg-slate-700 focus:outline-none focus:ring-purple-500
         focus:ring-2"

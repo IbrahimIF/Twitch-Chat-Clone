@@ -19,7 +19,7 @@ const ChatMessage = ({
 
     const Author = (
         <span className="font-semibold" style={{ color: author.rgbColor }}>
-            {author.username}
+            {author.username +":"}
         </span>
     )
 
@@ -33,7 +33,6 @@ const ChatMessage = ({
         <span className="ml-3 break-words">{content}</span>
     </div>
     )
-      
 }
 
 export default ChatMessage

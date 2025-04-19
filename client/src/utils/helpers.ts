@@ -30,5 +30,4 @@ const generateRandomBadges = (): Badge[] => {
         badge('turbo', 0.1),
     ].filter((x) => x !== undefined) as Badge[];
 };
-
 */
