@@ -9,11 +9,16 @@ const ChatMessage = ({
     message: { author, content }, 
     className, 
 }: MessageProps) => {
-    const Badges = author.badges?.map((bg, i) => (
+    const Badges = author.badges.map((bg, i) => (
         <img
             key={i}
             src={`/badges/${bg}.png`}
+            onError={(e) => {
+                console.error("Failed to load badge:", bg);
+                e.currentTarget.style.display = 'none';
+              }}
             className="w-4 h-4 self-center mr-2"
+            alt={bg}
         />
     ))
 

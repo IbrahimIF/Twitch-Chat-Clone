@@ -9,7 +9,7 @@ export interface MessageModel {
 export interface Author {
     rgbColor: string
     username: string
-    badges?: Badge[]
+    badges: Badge[]
 }
 
 export type Badge = 'moderator' | 'vip' | 'prime' | 'turbo'
