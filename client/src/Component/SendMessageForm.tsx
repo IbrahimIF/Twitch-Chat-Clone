@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import EmojiPickerButton from './EmojiPickerButton'
 
-type SendMessageFormProps = { onSend: (message: string) => void 
-  className?: string }
+type SendMessageFormProps = { 
+  onSend: (message: string) => void 
+  className?: string 
+}
 
   const MAX_MESSAGE_LENGTH = 300
   
@@ -22,14 +25,23 @@ const SendMessageForm = ({onSend, className}: SendMessageFormProps) => {
 
   return (
     <form className={className} onSubmit={handleSubmit}>
-        <input
-        type="text"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        className="w-full p-2 rounded bg-slate-700 focus:outline-none focus:ring-purple-500
-        focus:ring-2"
-        placeholder="Send a chat message"
-        />
+        <div className="relative">
+          <input
+          type="text"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          className="w-full p-2 rounded bg-slate-700 focus:outline-none focus:ring-purple-500
+          focus:ring-2"
+          placeholder="Send a chat message"
+          />
+          <div className=" absolute top-0 insert-y-0 right-2 inline-flex items-cemter bg-slate-700">
+            <EmojiPickerButton
+               onEmojiPick={(emoji) =>
+                  setMessage((msg) => msg.concat(emoji))
+               }
+            />
+          </div>
+        </div>
         <button className="bg-purple-600 p-2 float-right mt-2 rounded-md" type="submit">
         Chat
         </button>

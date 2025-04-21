@@ -10,5 +10,8 @@ export default defineConfig({
         changeOrigin: true,
       }
     }
-  }
+  },
+  define: {
+    global: 'window', // needed by emoji-picker-react
+  },
 })
