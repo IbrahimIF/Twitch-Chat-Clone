@@ -1,6 +1,7 @@
-import { IEmojiPickerProps } from 'emoji-picker-react'
-import { useRef, useState } from 'react'
 import { useOnClickOutside } from 'usehooks-ts'
+import { useRef, useState } from 'react'
+import { EmojiClickData } from 'emoji-picker-react'
+
 
 export default function useEmojiPicker(
     handleEmojiPick: (emoji: string) => void
@@ -8,11 +9,8 @@ export default function useEmojiPicker(
     const [isOpen, setIsOpen] = useState(false)
     const pickerRef = useRef(null)
 
-    const handleEmojiClick: IEmojiPickerProps['onEmojiClick'] = (
-        _,
-        { emoji }
-    ) => {
-        handleEmojiPick(emoji)
+    const handleEmojiClick = (emojiData: EmojiClickData) => {
+        handleEmojiPick(emojiData.emoji)
     }
 
     const toggleEmojiPicker: React.MouseEventHandler = () => {

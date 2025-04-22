@@ -2,12 +2,13 @@ import Picker from 'emoji-picker-react';
 import { HiOutlineEmojiHappy } from 'react-icons/hi';
 import useEmojiPicker from '../hooks/useEmojiPicker';
 
-const EmojiPickerButton =({
-    onEmojiPick: handleEmojiPick,
+const EmojiPickerButton = ({
+    onEmojiPick,
 }: {
     onEmojiPick: (emoji: string) => void
 }) => {
-    const { pickerRef, toggleEmojiPicker, isOpen, } = useEmojiPicker(handleEmojiPick)
+    const { pickerRef, toggleEmojiPicker, isOpen, handleEmojiClick } = 
+        useEmojiPicker(onEmojiPick);
 
     return (
         <div className="relative">
@@ -19,17 +20,15 @@ const EmojiPickerButton =({
                 <HiOutlineEmojiHappy className=" w-5 h-5 my-auto" />
             </button>
             {isOpen && ( // if the emoji picker is open
-                <div ref={pickerRef} className="absolute bottom-8 right-0 ">
+                <div ref={pickerRef} className="absolute bottom-8 right-0 z-10">
                     <Picker 
-                        onEmojiClick={handleEmojiPick}
+                        onEmojiClick={handleEmojiClick}
                         skinTonesDisabled={true}
                     />
-
                 </div>
             )}
         </div>
-    )
-
-}
+    );
+};
 
 export default EmojiPickerButton

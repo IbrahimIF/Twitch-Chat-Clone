@@ -34,7 +34,7 @@ const SendMessageForm = ({onSend, className}: SendMessageFormProps) => {
           focus:ring-2"
           placeholder="Send a chat message"
           />
-          <div className=" absolute top-0 insert-y-0 right-2 inline-flex items-cemter bg-slate-700">
+          <div className=" absolute top-1.5 insert-y-0 right-1 inline-flex items-cemter bg-slate-700">
             <EmojiPickerButton
                onEmojiPick={(emoji) =>
                   setMessage((msg) => msg.concat(emoji))
