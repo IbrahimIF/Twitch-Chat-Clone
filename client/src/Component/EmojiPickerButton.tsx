@@ -1,6 +1,7 @@
 import Picker from 'emoji-picker-react';
 import { HiOutlineEmojiHappy } from 'react-icons/hi';
 import useEmojiPicker from '../hooks/useEmojiPicker';
+import { Theme } from 'emoji-picker-react';
 
 const EmojiPickerButton = ({
     onEmojiPick,
@@ -24,6 +25,8 @@ const EmojiPickerButton = ({
                     <Picker 
                         onEmojiClick={handleEmojiClick}
                         skinTonesDisabled={true}
+                        theme={Theme.DARK}
+                         className="custom-theme"
                     />
                 </div>
             )}

@@ -24,6 +24,23 @@
     }
 }
 
+
+.custom-theme.EmojiPickerReact.epr-dark-theme {
+    --epr-bg-color: #141c2c;
+    --epr-category-label-bg-color: #1f1433;
+    --epr-search-input-bg-color: #2f3c50;
+    --epr-emoji-hover-color: #656565;
+    --epr-search-border-color: #8c4cd4;
+    --epr-dark-search-input-bg-color-active: #2f3c50;
+    --epr-text-color: #f3f4f6;
+    border: 1px solid #3c3c3c; 
+    border-width: 2px
+  }
+
+  .EmojiPickerReact .epr-search-container input {
+    border-width: 2px
+  }
+
 @layer components {
     aside.emoji-picker-react {
         @apply shadow-none;
