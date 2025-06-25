@@ -6,8 +6,12 @@ import { MessageModel } from '../utils/models'
 import useChatLiveModeScrolling from '../hooks/useChatLiveModeScrolling'
 import ChatPausedAlert from './ChatPausedAlert'
 
-const Chat = () => {
-  const {messages, send} = useChatMessages()
+type ChatProps = {
+  username: string; 
+}
+
+const Chat: React.FC<ChatProps>  = ({ username }) => {
+  const {messages, send} = useChatMessages(username)
   const {chatMessagesBoxRef, isLiveModeEnabled, scrollNewMessages } = useChatLiveModeScrolling<HTMLDivElement>(messages)
   return (
     <div className="w-full max-w-[550px] px-4 py-3 rounded-lg bg-slate-900 opacity-80 ">

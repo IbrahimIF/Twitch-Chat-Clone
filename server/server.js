@@ -53,7 +53,8 @@ io.on('connection', (socket) => {
   if (!userData.has(socket.id)) {
     userData.set(socket.id, {
       color: twitchUsernameColors[Math.floor(Math.random() * twitchUsernameColors.length)], 
-      badges: []
+      badges: [],
+      username: 'Guest' + socket.id.slice(0, 4)
     });
     console.log("Assigned colour:", userData.get(socket.id).color);
   }
@@ -61,24 +62,36 @@ io.on('connection', (socket) => {
   socket.on('message', (message) => {
     console.log('Message received:', message);
     const user = userData.get(socket.id);
+
+
+    if (user && message.username) {
+      user.username = message.username;
+      userData.set(socket.id, user); // Update the map
+    }
+
     
-    io.emit('new-message', { 
+    const messageToEmit = { 
       id: Date.now().toString(),
       author: {
         rgbColor: user.color,
         badges: user.badges,
-        username: 'User' + socket.id.slice(0, 4),
+        username: user.username,
       },
-      content: message,
-    });
+      content: message.content,
+    };
+
+    console.log('Emitting new-message:', messageToEmit.content); 
+    io.emit('new-message', messageToEmit);
   });
+
 
   socket.on('disconnect', () => { 
     console.log('User disconnected:', socket.id);
     connectedUsers.delete(socket.id);
+    userData.delete(socket.id); // Clean up user data on disconnect
   });
 });
 
 server.listen(PORT, () => {
-  console.log(`Socket.io server running`);
+  console.log(`Socket.io server running '${PORT}'`);
 });

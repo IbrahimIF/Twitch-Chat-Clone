@@ -2,7 +2,6 @@ import { useEffect, useState, useCallback } from "react";
 import { MessageModel } from '../utils/models'; // Defining the structure of a chat message.
 import useChatConnection from './useChatConnect'; // custom hook used for managing websocket connections
 
-
 const MESSAGE_WINDOW = 30 // defines the number of messages to keep in the chat window
 
 // first message to display in the chat
@@ -16,8 +15,7 @@ const welcomeMessage: MessageModel = {
     content: 'Welcome to Twitch Chat Clone!',
 }
 
-
-export default function useChatMessages() {
+export default function useChatMessages(username: string) {
     // intialises the welcome message and the following messages entered
     const [messages, setMessages] = useState<MessageModel[]>( [welcomeMessage])
     const socket = useChatConnection()
@@ -29,19 +27,19 @@ export default function useChatMessages() {
                 ...messages.slice(-MESSAGE_WINDOW), // slices the messages into 30
                 newMessage,
 
-            ]
+            ];
             setMessages(nextMessages)
         },
         [messages]
-    )
+    );
 
     // sends a message via the websocket connection.
     const send = useCallback(
         (message: string) => {
-          console.log('Sending message: ${message}')
-          socket?.emit('message', message)
+            console.log('Sending message: ${message} from user: ${username}')
+            socket?.emit('message', { content: message, username: username })
         },
-        [socket]
+        [socket, username]
     )
     
     // listens for new messages from the websocket connection and calls appendNewMessage when a new message arrives
