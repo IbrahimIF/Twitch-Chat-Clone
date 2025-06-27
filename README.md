@@ -1,12 +1,12 @@
 ![image](https://github.com/user-attachments/assets/fc0a4e5c-da04-44a0-a67b-0d624ff085ef)
 
-![Project Status](https://img.shields.io/badge/status-in_progress-green)
+![Project Status](https://img.shields.io/badge/Status-Completed-darkgreen)
 
-![Static Badge](https://img.shields.io/badge/made_with-React_+_Vite-blue)
+![Static Badge](https://img.shields.io/badge/Made_with-React_+_Vite-blue)
 
-This project is a Twitch chat clone built with React + Vite, originally following a tutorial by @code-with-gionatha. 
-It includes all core chat functionality like real-time messaging, user roles, and emote support. 
-Beyond the tutorial, I've added hidden Easter eggs, Themes, and special features like animated messages and sound effects to make it more interactive and fun.
+
+This project is a real-time Twitch chat replica built using React + Vite and TypeScript, initially developed following a tutorial by @code-with-gionatha. 
+It provides a dynamic messaging board where users can engage with each other in real-time using socket.io, simulating the interactive environment found on a live Twitch stream. This allows for immediate communication and community interaction, similar to a live chat alongside a streaming broadcast. Beyond the tutorial, this project has been enhanced with various features to improve user experience and functionality, making it a more robust and interactive chat platform.
 
 ----
 ## Getting started:
@@ -22,23 +22,22 @@ To run this project locally, you'll need to have Node.js and npm installed on yo
 -----
 
 ## Features:
-- **Sending & Receiving Real-time message display**: Users can send Messages, Messages would appear instantly in the chat window.
-- **User accounts**: Guest/anonymous chat mode & Optional user accounts with usernames.
-- **Emote**: Basic emoji support.
-- **Message history**: Users can do limited scrollback or Auto-scroll to the newest message .
-- **Pinned message**: Important messages stay visible.
+- **Real-time Message Delivery and Display**: Messages sent by users are displayed instantly within the chat window.
+- **Username Customisation**:
+   - **User Input**: Users can enter their desired username upon joining the chat.
+   - **Colourful Display**: Usernames are displayed with randomised colours, mirroring the colour schemes used on usernames in actual Twitch Messages.
+- **Emoji Support**: An integrated emoji picker allows users to easily add emojis to their messages, enriching expressions and interactions.
 - **Easter eggs**: Special responses to certain phrases, Hidden commands.
-- **Themes**: Light/Dark mode toggle.
-- **Mobile responsiveness**: Optimised layout for mobile devices.
+- **User Badges**: Support for displaying user-specific badges next to usernames, adding a layer of identity and recognition within the chat.
+- **Input Management**: Messages automatically clear from the input field once sent for a smoother user experience.
 ---
 ## Technologies and Tools Utilised:
 
-[![My Skills](https://skillicons.dev/icons?i=react,vite,ts,js,css,vscode,vercel,firebase,tailwind&perline=3)](https://skillicons.dev)
+![My Skills](https://go-skill-icons.vercel.app/api/icons?i=react,vite,ts,vercel,tailwind,socketio&perline=3)
+
 
 -----
 ## Acknowledgment:
 - [Build a twitch chat clone](https://www.youtube.com/watch?v=U2XnoKzxmeY)
 - [Socket.io](https://socket.io/)
-
-
----
+-----
